@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dashboard KPI DSE – MC Mujabeast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Dashboard Monitoring</h1>
+    <div class="mute" id="date"></div>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t1" aria-selected="true" aria-controls="p1">KPI DSE</button>
+      <button role="tab" id="t2" aria-selected="false" aria-controls="p2">Outlet wise</button>
+    </div>
+
+    <!-- Tab 1: KPI DSE -->
+    <section id="p1" role="tabpanel" aria-labelledby="t1">
+      <div class="ctl">
+        <label for="ds" class="mute">Tampilkan</label>
+        <select id="ds"></select>
+      </div>
+
+      <div class="hero">
+        <article class="c big g" id="cOsa"></article>
+        <article class="c big g" id="cSp"></article>
+        <article class="c" id="cKpi"></article>
+      </div>
+
+      <h2 class="sm">Metrik pendukung</h2>
+      <div class="mini" id="mini"></div>
+
+      <h2 class="sm">Outlet dan kualitas</h2>
+      <div class="rings" id="rings"></div>
+
+      <h2>Peringkat DSE berdasarkan KPI</h2>
+      <div class="wrap"><table id="sc"></table></div>
+    </section>
+
+    <!-- Tab 2: Outlet wise -->
+    <section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+      <div class="ctl">
+        <input id="q" type="search" placeholder="Cari nama outlet, ID, atau site" aria-label="Cari outlet">
+        <select id="fd" aria-label="Filter DSE"><option value="">Semua DSE</option></select>
+        <select id="fp" aria-label="Filter hari kunjungan"><option value="">Semua hari PJP</option></select>
+        <span class="mute" id="cnt"></span>
+      </div>
+      <div class="wrap maxh cs"><table id="ot"></table></div>
+    </section>
+
+    <footer>Sumber: Dashboard - HTML.xlsx (sheet KPI DSE dan Outlet Wise). KPI seluruh tim adalah rata-rata KPI indikasi para DSE; KPI OSA berbobot 40% dan KPI Sellin SP berbobot 60% (disimpulkan dari angka di Excel). UAR memakai data OSA 300K. OSSO belum ada di Excel. Isi ring dan bar berwarna hijau jika 50% ke atas dan merah jika di bawahnya. Warna di tabel memakai ambang bantu 85% dan 50%, bukan dari Excel.</footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
